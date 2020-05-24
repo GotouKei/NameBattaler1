@@ -1,0 +1,107 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".KyaraSakusei">
+
+    <!-- 名前 -->
+    <LinearLayout
+        android:id="@+id/linearLayout4Name"
+        android:layout_width="match_parent"
+        android:layout_height="67dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="0dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/text4name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:text="@string/modoru2"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/text1Kome1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.1"
+            android:text="@string/kome"
+            android:textColor="#FF0000"
+            android:textSize="14sp" />
+
+        <EditText
+            android:id="@+id/editText1Name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:autofillHints=""
+            android:ellipsize="end"
+            android:hint="@string/chui"
+            android:inputType="text"
+            android:lines="1"
+            android:maxLength="12"
+            android:maxLines="1"
+            android:minLines="1"
+            android:singleLine="true"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <!-- 登録ボタン -->
+
+    <!-- 選択用ラジオボタン -->
+
+    <Button
+        android:id="@+id/button1Regist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="536dp"
+        android:text="@string/kyara_sakusei2"
+        android:textSize="16sp" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup1"
+        android:layout_width="398dp"
+        android:layout_height="116dp"
+        android:layout_above="@+id/button1Regist"
+        android:layout_below="@+id/button1Regist"
+        android:layout_alignBottom="@+id/button1Regist"
+        android:layout_alignParentStart="false"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-500dp"
+        android:layout_marginBottom="200dp">
+
+        <RadioButton
+            android:id="@+id/radioButton4_senshi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="false"
+            android:text="@string/senshi"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/radioButton4_mahotsukai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:checked="false"
+            android:text="@string/mahotsukai"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/radioButton4_soryo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:checked="false"
+            android:text="@string/soryo"
+            android:textColor="#000000"
+            android:textSize="16sp" />
+
+    </RadioGroup>
+
+</RelativeLayout>
