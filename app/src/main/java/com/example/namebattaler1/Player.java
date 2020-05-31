@@ -19,32 +19,17 @@ abstract class Player {
     int MaxHp;
     int MaxMp;
 
-    public Player(int mp, int def, int agi, int partyNumber) {
-        if(partyNumber == 1) {
-            System.out.println("自分のキャラの名前を入力してください");
-        }
-        else {
-            System.out.println("相手のキャラの名前を入力してください");
-        }
-
-        name = scanner.nextLine();
-        int hp = Hash(name)*5;
+    public Player(String name, int hp, int mp, int str, int def, int agi, int luck, int partyNumber) {
+        this.name = name;
         this.hp = hp;
-        int str = Hash(name);
         this.str = str;
         this.mp = mp;
         this.def = def;
-        int luck = Hash(name);
         this.luck = luck;
         this.agi = agi;
         this.partyNumber = partyNumber;
         this.MaxHp = hp;
         this.MaxMp = mp;
-    }
-
-    public int Hash(String name) {
-        int i = GetNumber(name, 0);
-        return i;
     }
 
     public boolean Kaishin() {
@@ -124,25 +109,6 @@ abstract class Player {
         return mahi;
     }
 
-    public static Integer GetNumber(String name, Integer index) {	//ハッシュ値から値を出す
-        try {
-            byte[] result = MessageDigest.getInstance("SHA-1").digest(name.getBytes());
-            String digest = String.format("%040x",new BigInteger(1,result));
-            String hex = digest.substring(index*2,index*2+2);
-            int hash = Integer.parseInt(hex,16);
-            if(hash <= 50) {
-                hash = 300;
-            }
-            else if(hash >= 500){
-                hash = 300;
-            }
-            return hash/5;
-        } catch(Exception e) {
-
-        }
-        return 0;
-
-    }
 
 
 }

@@ -1,4 +1,5 @@
 package com.example.namebattaler1;
+
 public class Ransu extends Sakusen{
 
     public void sakusen() {

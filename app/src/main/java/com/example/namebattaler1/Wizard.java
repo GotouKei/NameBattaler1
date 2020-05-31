@@ -1,12 +1,14 @@
 package com.example.namebattaler1;
 
 import java.util.Random;
+
 public class Wizard extends Player {
+
     Random random = new Random();
     boolean bo = false;
 
-    public Wizard(int partyNumber) {	//パーティーのナンバー
-        super(55, 10, 40, partyNumber);		//mp , def , agi , パーティーナンバー
+    public Wizard(String name, int job, int hp, int mp, int str, int def, int agi, int luck) {
+        super(name, job, hp, mp, str, def, agi, luck);
     }
 
     protected void Attack(Player aite) {	//攻撃メソッド　　引数は攻撃対象

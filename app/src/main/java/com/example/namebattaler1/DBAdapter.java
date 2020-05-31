@@ -2,18 +2,16 @@ package com.example.namebattaler1;
 
 import android.content.ContentValues;
 import android.content.Context;
-import android.database.CharArrayBuffer;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 class DBAdapter {
-
-    private final static String DB_NAME = "names_battaler.db";
+    private final static String DB_NAME = "ppp";
     private final static String CHARACTERS = "CHARACTERS";
     private final static int DB_VERSION = 1;
 
-    private final static String ID = "_id";
+    private final static String ID = "id";
     private final static String NAME = "name";
     private final static String JOB = "job";
     private final static String HP = "hp";
@@ -22,18 +20,20 @@ class DBAdapter {
     private final static String DEF = "def";
     private final static String AGI = "agi";
     private final static String LUCK = "luck";
-    private final static String PARTY_NUMBER = "party_number";
     private final static String CREATE_AT = "create_at";
 
     private SQLiteDatabase db = null;
     private DBHelper dbHelper;
+    protected Context context;
 
     DBAdapter(Context context){
-        dbHelper = new DBHelper(context);
+        this.context = context;
+        dbHelper = new DBHelper(this.context);
     }
 
-    void openDB(){
+    public DBAdapter openDB(){
         db = dbHelper.getWritableDatabase();
+        return this;
     }
 
     void closeDB(){
@@ -42,20 +42,20 @@ class DBAdapter {
     }
 
 
-    void saveDB(String name, int hp, int mp, int str, int def, int agi, int luck, int party_number, String create_at){
+    void saveDB(String name, int job, int hp, int mp, int str, int def, int agi, int luck, int create_at){
 
         db.beginTransaction();
 
         try{
             ContentValues values = new ContentValues();
             values.put(NAME, name);
+            values.put(JOB, job);
             values.put(HP, hp);
             values.put(MP, mp);
             values.put(STR, str);
             values.put(DEF, def);
             values.put(AGI, agi);
             values.put(LUCK, luck);
-            values.put(PARTY_NUMBER, party_number);
             values.put(CREATE_AT, create_at);
 
             db.insert(CHARACTERS, null, values);
@@ -77,7 +77,7 @@ class DBAdapter {
     void selectDelete(String position){
         db.beginTransaction();
         try{
-            db.delete(CHARACTERS, ID + "=?", new String[]{position});
+            db.delete(CHARACTERS, NAME + "=?", new String[]{position});
             db.setTransactionSuccessful();
         } catch(Exception e){
             e.printStackTrace();
@@ -96,16 +96,16 @@ class DBAdapter {
         @Override
         public void onCreate(SQLiteDatabase db){
             String createTbl = "CREATE TABLE " + CHARACTERS + " ("
-                    + ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+                    + ID + "INTEGER NOT NULL,"
                     + NAME + " TEXT NOT NULL,"
+                    + JOB + " INTEGER NOT NULL,"
                     + HP + " INTEGER NOT NULL,"
                     + MP + " INTEGER NOT NULL,"
                     + STR + " INTEGER NOT NULL,"
                     + DEF + " INTEGER NOT NULL,"
                     + AGI + " INTEGER NOT NULL,"
                     + LUCK + " INTEGER NOT NULL,"
-                    + PARTY_NUMBER + " INTEGER NOT NULL,"
-                    + CREATE_AT + " TEXT NOT NULL"
+                    + CREATE_AT + " INTEGER NOT NULL"
                     + ");";
             db.execSQL(createTbl);
         }

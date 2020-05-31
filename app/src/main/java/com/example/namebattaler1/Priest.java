@@ -1,12 +1,14 @@
 package com.example.namebattaler1;
 
 import java.util.Random;
+
 public class Priest extends Player {
+
     boolean bo = false;
     boolean mahodake;
 
-    public Priest(int partyNumber) {
-        super(50, 10, 50, partyNumber);		//mp , def , agi , パーティーナンバー
+    public Priest(String name, int job, int hp, int mp, int str, int def, int agi, int luck) {
+        super(name, job, hp, mp, str, def, agi, luck);		//mp , def , agi , パーティーナンバー
     }
 
     public void Attack(Player aite) {	//攻撃メソッド　　　引数は攻撃対象

@@ -10,13 +10,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:paddingLeft="16dp"
-        android:paddingTop="16dp"
-        android:paddingRight="16dp"
-        android:paddingBottom="16dp"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="ExtraText,UselessParent"
-        tools:layout_editor_absoluteX="45dp"
-        tools:layout_editor_absoluteY="-66dp">
+        tools:layout_editor_absoluteX="194dp">
 
         <Button
             android:id="@+id/Modoru1"
@@ -26,9 +22,9 @@
             android:text="@string/modoru1" />
 
         <ListView
-            android:id="@+id/listView2"
-            android:layout_width="match_parent"
-            android:layout_height="512dp"
+            android:id="@+id/listView"
+            android:layout_width="wrap_content"
+            android:layout_height="566dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="12dp" />
 
@@ -40,12 +36,12 @@
         android:layout_height="wrap_content"
         android:onClick="kyara_sakusei1"
         android:text="@string/kyara_sakusei"
+        android:background="@drawable/all_kyaracter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.951" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

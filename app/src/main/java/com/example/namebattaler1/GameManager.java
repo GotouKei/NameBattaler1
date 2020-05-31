@@ -9,12 +9,13 @@ public class GameManager {
 
 
     Scanner scanner = new Scanner(System.in);
-    Fighter fighter1 = new Fighter(1);  //コンストラクタ（ジョブ名、(str)、パーティの種類(partyNumber)）
-    Fighter fighter2 = new Fighter(2);
-    Wizard wizard1 = new Wizard(1);
-    Wizard wizard2 = new Wizard(2);
-    Priest priest1 = new Priest(1);
-    Hero hero2 = new Hero(2);
+/*
+    Fighter fighter1 = new Fighter(name, job, hp, mp, str, def, agi, luck);  //コンストラクタ（ジョブ名、(str)、パーティの種類(partyNumber)）
+    Fighter fighter2 = new Fighter(name, job, hp, mp, str, def, agi, luck);
+    Wizard wizard1 = new Wizard(name, job, hp, mp, str, def, agi, luck);
+    Wizard wizard2 = new Wizard(name, job, hp, mp, str, def, agi, luck);
+    Priest priest1 = new Priest(name, job, hp, mp, str, def, agi, luck);
+    Hero hero2 = new Hero(name, job, hp, mp, str, def, agi, luck);*/
 
     Sakusen magicyusen = new MagicYusen();  //魔法優先の作戦インスタンス
     Sakusen magicsetuyaku = new Magicsetuyaku();  //マジック優先の作戦インスタンス
@@ -25,7 +26,6 @@ public class GameManager {
     Random random = new Random();
 
     static ArrayList<Player> hajime = new ArrayList<Player>();  //攻撃する順番を入れるリスト
-    static ArrayList<Player> owari = new ArrayList<Player>();	//攻撃し終わったキャラを入れるリスト
 
     Party party1 = new Party(1);	//パーティ種類(引数はパーティの種類ナンバー)
     Party party2 = new Party(2);
@@ -42,15 +42,14 @@ public class GameManager {
     static boolean Ransu;
 
 
-    public void prepareGame() {
-
+   /* public void prepareGame() {
         party1.addPlayer(fighter1);		//パーティーの中にキャラクターを入れていく
         party1.addPlayer(wizard1);
         party1.addPlayer(priest1);
         party2.addPlayer(fighter2);
         party2.addPlayer(wizard2);
         party2.addPlayer(hero2);
-    }
+    }*/
 
     public void startGame() {
         Player aite;	//攻撃対象
@@ -153,7 +152,7 @@ public class GameManager {
         Scanner scanner = new Scanner(System.in);	//作戦を入力してもらう
 
         System.out.println("作戦を決めてください！");
-        System.out.println("作戦なし(A) / 命優先(B) / 魔法節約(C) / 魔法優先(D) / ランダム(E)");
+        System.out.println("作戦なし(A) / 命優先(B) / 魔法節約(C) / 魔法優先(D) / ランダム(E)　/ バランス(F)");
 
         while(b == true) {
             String string = scanner.nextLine();
@@ -177,6 +176,10 @@ public class GameManager {
                 case "E":
                     b = false;
                     ransu.sakusen();
+                    break;
+                case "F":
+                    b = false;
+                    barance.sakusen();
                     break;
                 default:
                     System.out.println("選択肢から選んでください！");

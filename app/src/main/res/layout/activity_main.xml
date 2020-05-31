@@ -19,12 +19,12 @@
         app:layout_constraintVertical_bias="0.269" />
 
     <Button
-        android:id="@+id/button1_ichiran"
+        android:id="@+id/kyara_ichiran"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="kyara_ichiran1"
         android:text="@string/kyara_ichiran"
         android:textSize="24sp"
+        android:onClick="kyara_ichiran"
         app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -46,4 +46,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/app_name"
         app:layout_constraintVertical_bias="0.708" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

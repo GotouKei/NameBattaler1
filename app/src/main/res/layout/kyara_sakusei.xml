@@ -4,53 +4,31 @@
     android:layout_height="wrap_content"
     tools:context=".KyaraSakusei">
 
-    <!-- 名前 -->
-    <LinearLayout
-        android:id="@+id/linearLayout4Name"
+    <EditText
+        android:id="@+id/editText1Name"
         android:layout_width="match_parent"
-        android:layout_height="67dp"
+        android:layout_height="57dp"
+        android:layout_alignBottom="@+id/radioGroup1"
+        android:layout_marginTop="22dp"
+        android:layout_marginBottom="265dp"
+        android:inputType="text"
+        android:autofillHints=""
+        tools:ignore="LabelFor" />
+
+    <TextView
+        android:id="@+id/text1Kome1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/textView"
         android:layout_alignParentStart="true"
-        android:layout_marginStart="0dp"
-        android:orientation="horizontal">
-
-        <TextView
-            android:id="@+id/text4name"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.5"
-            android:text="@string/modoru2"
-            android:textColor="#000000"
-            android:textSize="16sp" />
-
-        <TextView
-            android:id="@+id/text1Kome1"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.1"
-            android:text="@string/kome"
-            android:textColor="#FF0000"
-            android:textSize="14sp" />
-
-        <EditText
-            android:id="@+id/editText1Name"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:autofillHints=""
-            android:ellipsize="end"
-            android:hint="@string/chui"
-            android:inputType="text"
-            android:lines="1"
-            android:maxLength="12"
-            android:maxLines="1"
-            android:minLines="1"
-            android:singleLine="true"
-            android:textSize="16sp" />
-    </LinearLayout>
-
-    <!-- 登録ボタン -->
-
-    <!-- 選択用ラジオボタン -->
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="11dp"
+        android:layout_marginBottom="131dp"
+        android:text="@string/kome"
+        android:textColor="#FF0000"
+        android:textSize="14sp" />
 
     <Button
         android:id="@+id/button1Regist"
@@ -63,15 +41,15 @@
 
     <RadioGroup
         android:id="@+id/radioGroup1"
-        android:layout_width="398dp"
-        android:layout_height="116dp"
+        android:layout_width="405dp"
+        android:layout_height="207dp"
         android:layout_above="@+id/button1Regist"
         android:layout_below="@+id/button1Regist"
         android:layout_alignBottom="@+id/button1Regist"
         android:layout_alignParentStart="false"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="-500dp"
-        android:layout_marginBottom="200dp">
+        android:layout_marginTop="-313dp"
+        android:layout_marginBottom="106dp">
 
         <RadioButton
             android:id="@+id/radioButton4_senshi"
@@ -103,5 +81,49 @@
             android:textSize="16sp" />
 
     </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="41dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="84dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginBottom="146dp"
+        android:gravity="center_horizontal"
+        android:text="@string/nameScan"
+        android:textSize="25sp" />
+
+    <Button
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="308dp"
+        android:text="@string/back"
+        android:onClick="kyara_ichiran"
+        tools:ignore="OnClick" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="41dp"
+        android:layout_alignBottom="@+id/radioGroup1"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="17dp"
+        android:layout_marginEnd="23dp"
+        android:layout_marginBottom="215dp"
+        android:gravity="center_horizontal"
+        android:textSize="25sp"
+        android:text="@string/jobjuge" />
+
 
 </RelativeLayout>

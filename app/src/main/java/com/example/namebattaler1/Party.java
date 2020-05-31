@@ -1,7 +1,9 @@
 package com.example.namebattaler1;
 
 import java.util.ArrayList;
+
 public class Party {
+
     ArrayList<Player> members = new ArrayList();
     int partyNumber;
     Player player;

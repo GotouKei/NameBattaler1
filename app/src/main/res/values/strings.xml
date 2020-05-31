@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">NameBattaler1</string>
+    <string name="app_name">ネームバトラー</string>
     <string name="name_battaler">ネームバトラー</string>
     <string name="kyara_ichiran">キャラ一覧</string>
     <string name="battale_chokuzen">バトル開始</string>
@@ -12,4 +12,22 @@
     <string name="kome">※</string>
     <string name="chui">名前を入力してください</string>
     <string name="kyara_sakusei2">作成する</string>
+    <string name="state">ステータス</string>
+    <string name="hp">HP</string>
+    <string name="mp">MP</string>
+    <string name="str">STR</string>
+    <string name="def">DEF</string>
+    <string name="agi">AGI</string>
+    <string name="luck">LUCK</string>
+    <string name="sakujo">削除する</string>
+    <string name="sakuseibi">作成日：</string>
+    <string name="hp1">HP:</string>
+    <string name="mp2">MP:</string>
+    <string name="str2">STR:</string>
+    <string name="def2">DEF:</string>
+    <string name="agi2">AGI:</string>
+    <string name="nameScan">名前を入力してください</string>
+    <string name="back">戻る</string>
+    <string name="jobjuge">職業を選択してください</string>
+    <string name="kyara">キャラ一覧</string>
 </resources>

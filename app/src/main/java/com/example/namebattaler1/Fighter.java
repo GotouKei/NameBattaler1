@@ -2,9 +2,8 @@ package com.example.namebattaler1;
 
 public class Fighter extends Player {
 
-    public Fighter(int partyNumber) {
-
-        super(100, 30, 30, partyNumber);
+    public Fighter(String name, int job, int hp, int mp, int str, int def, int agi, int luck) {
+        super(name, job, hp, mp, str, def, agi, luck);
     }
 
     protected void Attack(Player aite) {

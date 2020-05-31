@@ -2,11 +2,9 @@ package com.example.namebattaler1;
 
 public class Hero extends Player{
 
-    public Hero(int partyNumber) {
-
-        super(100, 100, 100, partyNumber);
+    public Hero(String name, int job, int hp, int mp, int str, int def, int agi, int luck) {
+        super(name, job, hp, mp, str, def, agi, luck);
     }
-
     protected void Attack(Player aite) {
         boolean kaishin = Kaishin();
         int damage = str;
